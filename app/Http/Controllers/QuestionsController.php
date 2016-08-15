@@ -16,11 +16,17 @@ class QuestionsController extends Controller
    return view('question')->with(['socialism'=>$socialism, 'capitalism'=>$capitalism, 'questions'=>$questions]);
     }
 
-    public function incrementSlider(){
+    public function incrementSlider($id){
 
     	// updates the database slider value
-    	$add = DB::table('questions')->where('id', 1)->update(array('slider_value' => 12345678));
-    	$value = DB::table('questions')->first()->slider_value;
+        $num = 0;
+        $num+=1;
+    	$add = DB::table('questions')->where('id', 1)->update(array('slider_value' => $num));
+    	//$value = DB::table('questions')->first()->slider_value;
+       // $questions = DB::table('questions')->simplePaginate(1);
+      //  $questions = $id;
     	return view('test')->with(['add'=>$add,'value'=>$value]);
+       //  $questions = DB::table('questions')->where('id', '1')->get();
+        // return view('test')->with(['questions'=>$questions]);
     }
 }

@@ -1,1 +1,1 @@
-<h2>{{$value}}</h2>
+<h1>{{ $questions }}</h1>
