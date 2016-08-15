@@ -1,0 +1,26 @@
+{
+	"title": "Capitalism and Socialism - Likert Scale",
+	"instructions": "In the likert scales below, indicate your perspective on how successful each criteria can be met along the capitalist to socialist continuum.",
+	"questions":[
+		{
+			"question": "Which system is it fair to everyone?",
+			"value": "0"		
+		},
+		{
+			"question": "Which system provides an enhanced quality of life for the majority over time?",		
+		    "value": "0"
+		},
+		{
+			"question": "Which system offers employment stability and economic security for the majority?",		
+			"value": "0"
+		},
+		{
+			"question": "Which system wastes fewer resources?",		
+			"value": "0"
+		},
+		{
+			"question": "Which system offers sufficient opportunities for all to do meaningful work?",		
+			"value": "0"
+		}
+	]
+}
