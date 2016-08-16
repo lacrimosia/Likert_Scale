@@ -13,6 +13,6 @@
 
 Route::get('/', 'QuestionsController@intro');
 
-Route::get('/{id}', 'QuestionsController@display');
+Route::get('/{id}', 'QuestionsController@getRequest');
 
 Route::get('/test', 'QuestionsController@incrementSlider');

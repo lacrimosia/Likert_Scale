@@ -89,22 +89,22 @@ $(document).ready(function() {
             });
 
             // load array questions
-        //    $('.question h2').text("1. "+app.shuffleArray[0].question).hide().fadeIn();
+            //    $('.question h2').text("1. "+app.shuffleArray[0].question).hide().fadeIn();
 
-         //   console.log("data", app.shuffleArray);
+            //   console.log("data", app.shuffleArray);
         }
 
         // go to next question
         function nextQuestion(count) {
-            $('.question h2').text((count+1)+". "+app.shuffleArray[count].question).hide().fadeIn();
+            // $('.question h2').text((count+1)+". "+app.shuffleArray[count].question).hide().fadeIn();
             var value = $("#slider").slider("option", "value");
-
-          if(count < app.shuffleArray.length-1){                                       
-              app.shuffleArray[count].value = value;            
-            }else{
-                $('.Next').hide();
-                $('.Fin').show();
-            }
+            window.location = 'http://localhost:8000/'+(count + 1);
+            /*  if(count < app.shuffleArray.length-1){                                       
+                  app.shuffleArray[count].value = value;            
+                }else{
+                    $('.Next').hide();
+                    $('.Fin').show();
+                }*/
             return count;
         }
 

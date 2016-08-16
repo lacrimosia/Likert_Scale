@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 
+use Request;
 use App\question;
 use \DB;
 use App\Http\Requests;
@@ -29,7 +30,7 @@ class QuestionsController extends Controller
       $updateSlider->save();
    return view('question')->with(['socialism'=>$socialism, 'capitalism'=>$capitalism, 'questions'=>$questions]);
 
-   
+
     }
 
     public function incrementSlider(){
@@ -49,5 +50,18 @@ class QuestionsController extends Controller
       $question->slider_value = 32;
       $question->save();
          return view('test')->with(['question'=>$question]);
+    }
+
+    public function getRequest($id){
+      if(Request::ajax()){
+        return "Request has been loaded";
+      }
+      $socialism = "Socialism"; //title1
+      $capitalism = "Capitalism"; // title2
+      $questions = question::find($id);
+      $updateSlider = \App\question::find($id);
+      $updateSlider->slider_value += 1;  // update values
+      $updateSlider->save();
+   return view('question')->with(['socialism'=>$socialism, 'capitalism'=>$capitalism, 'questions'=>$questions]);
     }
 }
