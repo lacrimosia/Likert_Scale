@@ -10,14 +10,17 @@ use App\Http\Requests;
 
 class QuestionsController extends Controller
 {
-    public function display(){
+    public function display($id){
     	$socialism = "Socialism"; //title1
     	$capitalism = "Capitalism"; // title2
     //	$questions = DB::table('questions')->first(); // display first record
-      
+
       // randomized questions loaded from the database
       $randomQuestion = rand(1,5);
-      $questions = question::find($randomQuestion);
+      $questions = question::find($id);
+      $updateSlider = \App\question::find($id);
+      $updateSlider->slider_value = 404;
+      $updateSlider->save();
    return view('question')->with(['socialism'=>$socialism, 'capitalism'=>$capitalism, 'questions'=>$questions]);
     }
 

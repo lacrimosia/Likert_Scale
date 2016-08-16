@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', 'QuestionsController@display');
+Route::get('/{id}', 'QuestionsController@display');
 
 Route::get('/test', 'QuestionsController@incrementSlider');
