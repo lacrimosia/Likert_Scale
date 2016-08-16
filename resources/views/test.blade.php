@@ -1,1 +1,1 @@
-<h1>{{ $questions }}</h1>
+<h1>{{ $question->slider_value }}</h1>
